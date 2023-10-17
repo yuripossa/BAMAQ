@@ -1,0 +1,249 @@
+SELECT 
+
+  agente_cobrador
+, cliente
+, cod_cliente
+, cod_empresa
+, cod_vendedor
+, data_cancelamento::date
+, data_emissao::date
+, data_pagamento::date
+, data_previsao_pagamento::date
+, data_vencimento::date
+, departamento
+, replace(replace(replace(doccli,'/',''),'-',''),'.','') as doccli
+, eh_devolucao
+, empresa
+, forma_pagamento
+, juros
+, lancamento_financeiro
+, matriz
+, multa
+, natureza_operacao
+, negativado
+, nosso_numero
+, nota_fiscal_codigo
+, nota_fiscal_numero
+, nota_fiscal_serie
+, num_titulo
+, parcela
+, status_titulo
+, sysorigem
+, tem_devolucao
+, tipo_movimento
+, tipo_titulo
+, titulo_saldo
+, valor_comissao
+, valor_devido
+, valor_fundo_reserva
+, valor_nominal_titulo
+, valor_seguro
+, valor_taxa_adminstrativa
+, valor_titulo
+, valorpago
+, vendedor
+
+
+
+
+
+FROM
+(
+SELECT 
+
+  agente_cobrador::text
+, cliente::text
+, cod_cliente::text
+, cod_empresa::text
+, cod_vendedor::text
+, data_cancelamento::text
+, data_emissao::text
+, data_pagamento::text
+, data_previsao_pagamento::text
+, data_vencimento::text
+, departamento::text
+, doccli::text
+, eh_devolucao::text
+, empresa::text
+, forma_pagamento::text
+, juros::text
+, lancamento_financeiro::text
+, matriz::text
+, multa::text
+, natureza_operacao::text
+, negativado::text
+, nosso_numero::text
+, nota_fiscal_codigo::text
+, nota_fiscal_numero::text
+, nota_fiscal_serie::text
+, num_titulo::text
+, parcela::text
+, status_titulo::text
+, sysorigem::text
+, tem_devolucao::text
+, tipo_movimento::text
+, tipo_titulo::text
+, titulo_saldo::text
+, valor_comissao::text
+, valor_devido::text
+, valor_fundo_reserva::text
+, valor_nominal_titulo::text
+, valor_seguro::text
+, valor_taxa_adminstrativa::text
+, valor_titulo::text
+, valorpago::text
+, vendedor::text
+
+FROM staging.dts_financeiro_nbs_PJ1 
+
+UNION ALL
+
+SELECT 
+
+  agente_cobrador::text
+, cliente::text
+, cod_cliente::text
+, cod_empresa::text
+, cod_vendedor::text
+, data_cancelamento::text
+, data_emissao::text
+, data_pagamento::text
+, data_previsao_pagamento::text
+, data_vencimento::text
+, departamento::text
+, doccli::text
+, eh_devolucao::text
+, empresa::text
+, forma_pagamento::text
+, juros::text
+, lancamento_financeiro::text
+, matriz::text
+, multa::text
+, natureza_operacao::text
+, negativado::text
+, nosso_numero::text
+, nota_fiscal_codigo::text
+, nota_fiscal_numero::text
+, nota_fiscal_serie::text
+, num_titulo::text
+, parcela::text
+, status_titulo::text
+, sysorigem::text
+, tem_devolucao::text
+, tipo_movimento::text
+, tipo_titulo::text
+, titulo_saldo::text
+, valor_comissao::text
+, valor_devido::text
+, valor_fundo_reserva::text
+, valor_nominal_titulo::text
+, valor_seguro::text
+, valor_taxa_adminstrativa::text
+, valor_titulo::text
+, valorpago::text
+, vendedor::text
+
+FROM staging.dts_financeiro_newcon_PJ1 
+
+UNION ALL
+
+SELECT 
+
+  agente_cobrador::text
+, cliente::text
+, cod_cliente::text
+, cod_empresa::text
+, cod_vendedor::text
+, data_cancelamento::text
+, data_emissao::text
+, data_pagamento::text
+, data_previsao_pagamento::text
+, data_vencimento::text
+, departamento::text
+, doccli::text
+, eh_devolucao::text
+, empresa::text
+, forma_pagamento::text
+, juros::text
+, lancamento_financeiro::text
+, matriz::text
+, multa::text
+, natureza_operacao::text
+, negativado::text
+, nosso_numero::text
+, nota_fiscal_codigo::text
+, nota_fiscal_numero::text
+, nota_fiscal_serie::text
+, num_titulo::text
+, parcela::text
+, status_titulo::text
+, sysorigem::text
+, tem_devolucao::text
+, tipo_movimento::text
+, tipo_titulo::text
+, titulo_saldo::text
+, valor_comissao::text
+, valor_devido::text
+, valor_fundo_reserva::text
+, valor_nominal_titulo::text
+, valor_seguro::text
+, valor_taxa_adminstrativa::text
+, valor_titulo::text
+, valorpago::text
+, vendedor::text
+
+FROM staging.dts_financeiro_quiver_PJ1 
+
+UNION ALL
+
+SELECT 
+
+  agente_cobrador::text
+, cliente::text
+, cod_cliente::text
+, cod_empresa::text
+, cod_vendedor::text
+, data_cancelamento::text
+, data_emissao::text
+, data_pagamento::text
+, data_previsao_pagamento::text
+, data_vencimento::text
+, departamento::text
+, doccli::text
+, eh_devolucao::text
+, empresa::text
+, forma_pagamento::text
+, juros::text
+, lancamento_financeiro::text
+, matriz::text
+, multa::text
+, natureza_operacao::text
+, negativado::text
+, nosso_numero::text
+, nota_fiscal_codigo::text
+, nota_fiscal_numero::text
+, nota_fiscal_serie::text
+, num_titulo::text
+, parcela::text
+, status_titulo::text
+, sysorigem::text
+, tem_devolucao::text
+, tipo_movimento::text
+, tipo_titulo::text
+, titulo_saldo::text
+, valor_comissao::text
+, valor_devido::text
+, valor_fundo_reserva::text
+, valor_nominal_titulo::text
+, valor_seguro::text
+, valor_taxa_adminstrativa::text
+, valor_titulo::text
+, valorpago::text
+, vendedor::text
+
+FROM staging.dts_financeiro_dealer_PJ1 
+
+)T1
+
+
+order by doccli asc
